@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   mupdf ios static library
                    DESC
 
-  s.homepage     = "http://EXAMPLE/MuPDF"
+  s.homepage     = "http://github.com/hemincong/MuPDF"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -40,8 +40,8 @@ Pod::Spec.new do |s|
   #
 
   #s.license      = "MIT (example)"
-  s.license      = { :type => "MIT", :text => <<-LICENSE 
-  深圳CA保留所有权利
+  s.license      = { :type => "AGPL v3.0", :text => <<-LICENSE 
+  AGPL 3.0
   LICENSE
   }
 
@@ -94,15 +94,14 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  #s.source_files  = "platform/ios/Classes/*.{h,m}", "platform/ios/*.{h,m}", "include/*.*"
-  s.source_files  = "include/mupdf/pdf/*.h"
+  s.source_files  = "platform/ios/Classes/*.{h,m}", "platform/ios/*.{h,m}", "include/*.*"
 
   #s.header_dir = "mupdf"
-  #s.header_mappings_dir = "include/mupdf/"
+  s.header_mappings_dir = "include/mupdf/"
   s.preserve_paths = "include"
   #s.public_header_files = "platform/ios/Classes/**/*.h", "include/pdf/**/.h", "include/fitz/**/.h"
   # s.public_header_files = "Classes/**/*.h"
-  s.public_header_files = "include/mupdf/pdf/*.h"
+  s.public_header_files = "platform/ios/*.{h,m}"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -141,7 +140,7 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  #s.xcconfig = { "HEADER_SEARCH_PATHS" => "${PODS_TARGET_SRCROOT}/include/" }
+  s.xcconfig = { "HEADER_SEARCH_PATHS" => "${PODS_ROOT}/MuPDF/inlude" }
   # s.dependency "JSONKit", "~> 1.4"
 
 end
