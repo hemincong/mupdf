@@ -94,7 +94,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "platform/ios/Classes/*.{h,m}", "platform/ios/*.{h,m}", "include/*.*"
+  s.source_files  = "platform/ios/Classes/*.{h,m}", "platform/ios/*.{h,m}", "include/*.*", "source/**/*.c"
 
   #s.header_dir = "mupdf"
   s.header_mappings_dir = "include/mupdf/"
