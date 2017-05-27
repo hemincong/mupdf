@@ -98,7 +98,7 @@ Pod::Spec.new do |s|
 
   #s.header_dir = "mupdf"
   s.header_mappings_dir = "include/mupdf/"
-  s.preserve_paths = "include"
+  s.preserve_paths = "include", "source"
   #s.public_header_files = "platform/ios/Classes/**/*.h", "include/pdf/**/.h", "include/fitz/**/.h"
   # s.public_header_files = "Classes/**/*.h"
   s.public_header_files = "platform/ios/*.{h,m}"
@@ -140,7 +140,7 @@ Pod::Spec.new do |s|
   s.requires_arc = false
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.xcconfig = { "HEADER_SEARCH_PATHS" => "${PODS_ROOT}/MuPDF/include" }
+  s.xcconfig = { "HEADER_SEARCH_PATHS" => "${PODS_ROOT}/MuPDF/include", "${PODS_ROOT}/MuPDF/source" }
   # s.dependency "JSONKit", "~> 1.4"
 
 end
